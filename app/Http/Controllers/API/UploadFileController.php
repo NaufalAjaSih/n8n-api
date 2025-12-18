@@ -24,6 +24,11 @@ class UploadFileController extends Controller
         return response()->json([
             "success" => true,
             "message" => "File uploaded successfully",
+            "data" => [
+                "filename" => $filename,
+                "path" => $path,
+                "url" => $path . '/' . $filename
+            ]
         ]);
     }
 }
